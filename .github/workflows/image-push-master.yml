@@ -4,7 +4,7 @@ on:
     branches:
       - master
 env:
-  image-push-owner: 'k8snetworkplumbingwg'
+  image-push-owner: 'NAVRockClimber'
 jobs:
   push-thick-amd64:
     name: Image push thick image/amd64
