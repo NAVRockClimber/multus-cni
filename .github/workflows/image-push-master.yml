@@ -5,6 +5,7 @@ on:
       - master
 env:
   image-push-owner: 'navrockclimber'
+  lowercase-repo-name: 'navrockclimber/multus-cni'
 jobs:
   push-thick-amd64:
     name: Image push thick image/amd64
@@ -31,8 +32,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository.lowercase }}:latest-thick
-            ghcr.io/${{ github.repository.lowercase }}:snapshot-thick
+            ghcr.io/${{ env.lowercase-repo-name }}:latest-thick
+            ghcr.io/${{ env.lowercase-repo-name }}:snapshot-thick
           file: images/Dockerfile.thick
           platforms: linux/amd64,linux/arm64,linux/arm/v7
 
@@ -61,8 +62,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository.lowercase }}:latest
-            ghcr.io/${{ github.repository.lowercase }}:snapshot
+            ghcr.io/${{ env.lowercase-repo-name }}:latest
+            ghcr.io/${{ env.lowercase-repo-name }}:snapshot
           file: images/Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x
           sbom: false
@@ -75,8 +76,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository.lowercase }}:latest-debug
-            ghcr.io/${{ github.repository.lowercase }}:snapshot-debug
+            ghcr.io/${{ env.lowercase-repo-name }}:latest-debug
+            ghcr.io/${{ env.lowercase-repo-name }}:snapshot-debug
           file: images/Dockerfile.debug
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/ppc64le,linux/s390x
           sbom: false
