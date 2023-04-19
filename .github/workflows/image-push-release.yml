@@ -136,7 +136,7 @@ jobs:
 #          file: images/Dockerfile.openshift
 
   push-manifest:
-    needs: [push-thick-amd64, push-arm64, push-ppc64le, push-s390x]
+    needs: [push-thick-amd64]
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ghcr.io/${{ github.repository }}
