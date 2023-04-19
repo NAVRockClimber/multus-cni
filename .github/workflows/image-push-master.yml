@@ -10,6 +10,9 @@ jobs:
   push-thick-amd64:
     name: Image push thick image/amd64
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v3
@@ -40,6 +43,9 @@ jobs:
   push-thin:
     name: Image push thin image
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v3
